@@ -12,10 +12,12 @@ app.use(express.json());
 const JWT_SECRET = 'your_jwt_secret_key_change_in_production';
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/consent_manager', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+import dotenv from 'dotenv';
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ Connected to MongoDB Atlas'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
 
 // User Schema
 const userSchema = new mongoose.Schema({
