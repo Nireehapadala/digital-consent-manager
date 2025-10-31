@@ -19,7 +19,7 @@ function ParentDashboard({ user, onLogout }) {
 
   const loadSubmissions = async () => {
     try {
-      const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/submissions/parent', {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/submissions/parent`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubmissions(response.data);
