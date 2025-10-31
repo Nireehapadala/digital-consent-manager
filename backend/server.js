@@ -4,13 +4,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const JWT_SECRET = process.env.JWT_SECRET
-import dotenv from 'dotenv';
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI)
