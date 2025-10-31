@@ -30,7 +30,7 @@ function Register() {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/register', formData);
+      const response = await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/register', formData);
       setSuccess(response.data.message);
       setTimeout(() => {
         navigate('/login');

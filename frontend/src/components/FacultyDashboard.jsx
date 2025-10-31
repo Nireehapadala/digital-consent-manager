@@ -27,7 +27,7 @@ function FacultyDashboard({ user, onLogout }) {
 
   const loadForms = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/forms', {
+      const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/forms', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setForms(response.data);
@@ -38,7 +38,7 @@ function FacultyDashboard({ user, onLogout }) {
 
   const loadSubmissions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/submissions/faculty', {
+      const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/submissions/faculty', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubmissions(response.data);
@@ -56,7 +56,7 @@ function FacultyDashboard({ user, onLogout }) {
   const handleApprove = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/submissions/${selectedSubmission._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/submissions/${selectedSubmission._id}`,
         {
           status: 'approved',
           adminComments
@@ -76,7 +76,7 @@ function FacultyDashboard({ user, onLogout }) {
   const handleReject = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/submissions/${selectedSubmission._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/submissions/${selectedSubmission._id}`,
         {
           status: 'rejected',
           adminComments
@@ -100,7 +100,7 @@ function FacultyDashboard({ user, onLogout }) {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/forms', newForm, {
+      await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/forms', newForm, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('Form created successfully!');
@@ -123,7 +123,7 @@ function FacultyDashboard({ user, onLogout }) {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/forms/${formId}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/forms/${formId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('Form deleted successfully!');

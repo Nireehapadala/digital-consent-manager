@@ -23,7 +23,7 @@ function StudentDashboard({ user, onLogout }) {
 
   const loadAvailableForms = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/forms/available', {
+      const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/forms/available', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setForms(response.data);
@@ -34,7 +34,7 @@ function StudentDashboard({ user, onLogout }) {
 
   const loadSubmissions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/submissions/student', {
+      const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/submissions/student', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubmissions(response.data);
@@ -59,7 +59,7 @@ function StudentDashboard({ user, onLogout }) {
 
   const handleSaveDraft = async () => {
     try {
-      await axios.post('http://localhost:5000/api/submissions', {
+      await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/submissions', {
         formId: selectedForm._id,
         formTitle: selectedForm.title,
         formData,
@@ -82,7 +82,7 @@ function StudentDashboard({ user, onLogout }) {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/submissions', {
+      await axios.post('${import.meta.env.VITE_BACKEND_URL}/api/submissions', {
         formId: selectedForm._id,
         formTitle: selectedForm.title,
         formData,

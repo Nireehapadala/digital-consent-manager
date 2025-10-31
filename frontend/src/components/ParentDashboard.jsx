@@ -19,7 +19,7 @@ function ParentDashboard({ user, onLogout }) {
 
   const loadSubmissions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/submissions/parent', {
+      const response = await axios.get('${import.meta.env.VITE_BACKEND_URL}/api/submissions/parent', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSubmissions(response.data);
@@ -47,7 +47,7 @@ function ParentDashboard({ user, onLogout }) {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/submissions/${selectedSubmission._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/submissions/${selectedSubmission._id}`,
         {
           parentSignature: signature,
           status: 'sent_to_admin'
