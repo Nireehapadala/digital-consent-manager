@@ -1,0 +1,191 @@
+/* src/components/ParentDashboard.css */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.dashboard-header {
+  background-color: #28a745;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h2 {
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-logout {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-logout:hover {
+  background-color: #c82333;
+}
+
+.dashboard-nav {
+  background-color: white;
+  padding: 15px 40px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-nav button {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.dashboard-nav button:hover {
+  background-color: #e0e0e0;
+}
+
+.dashboard-nav button.active {
+  background-color: #28a745;
+  color: white;
+}
+
+.dashboard-content {
+  padding: 30px 40px;
+}
+
+.submissions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.submission-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submission-card h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.submission-card p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-view {
+  background-color: #007bff;
+  color: white;
+  flex: 1;
+}
+
+.btn-view:hover {
+  background-color: #0056b3;
+}
+
+.btn-sign {
+  background-color: #28a745;
+  color: white;
+  flex: 1;
+}
+
+.btn-sign:hover {
+  background-color: #218838;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.view-details {
+  margin: 20px 0;
+}
+
+.view-details p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.view-details h3 {
+  margin: 20px 0 10px 0;
+  color: #28a745;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  flex: 1;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+  flex: 1;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
