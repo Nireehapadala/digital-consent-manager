@@ -9,9 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const JWT_SECRET = 'your_jwt_secret_key_change_in_production';
-
-// MongoDB Connection
+const JWT_SECRET = process.env.JWT_SECRET
 import dotenv from 'dotenv';
 dotenv.config();
 
